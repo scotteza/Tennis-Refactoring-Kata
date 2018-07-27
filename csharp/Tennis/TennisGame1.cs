@@ -1,4 +1,3 @@
-using Tennis.Exceptions;
 using Tennis.ScoreHandlers;
 
 namespace Tennis
@@ -13,7 +12,6 @@ namespace Tennis
         {
             player1 = new Player(player1Name);
             player2 = new Player(player2Name);
-
             scoreHandlerChain = new ScoreHandlerChain();
         }
 

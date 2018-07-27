@@ -4,7 +4,7 @@
     {
         public bool CanHandle(Scores scores)
         {
-            // TODO: re think this
+            // TODO: re think this?
             return true;
         }
 

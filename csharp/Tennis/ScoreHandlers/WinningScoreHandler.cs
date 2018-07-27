@@ -5,17 +5,17 @@ namespace Tennis.ScoreHandlers
     internal class WinningScoreHandler : IScoreHandler
     {
         // TODO: move this somewhere else, it is used in 2 classes
-        private const int MinimumPerplayerScoreForWinCalculations = 4;
+        private const int MinimumPlayerScoreForWinCalculations = 4;
         private const int MinimumScoreDifferenceForWin = 2;
 
         public bool CanHandle(Scores scores)
         {
-            return (scores.Score1 >= MinimumPerplayerScoreForWinCalculations || scores.Score2 >= MinimumPerplayerScoreForWinCalculations)
+            return (scores.Score1 >= MinimumPlayerScoreForWinCalculations || scores.Score2 >= MinimumPlayerScoreForWinCalculations)
                     && HasAPlayerWon(scores);
         }
 
         // TODO: rename?
-        private static bool HasAPlayerWon(Scores scores)
+        private bool HasAPlayerWon(Scores scores)
         {
             var scoreDifference = Math.Abs(scores.Score1 - scores.Score2);
             return scoreDifference >= MinimumScoreDifferenceForWin;

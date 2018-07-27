@@ -5,12 +5,12 @@ namespace Tennis.ScoreHandlers
     internal class AdvantageHandler : IScoreHandler
     {
         // TODO: move this somewhere else, it is used in 2 classes
-        private const int MinimumPerplayerScoreForAdvantageCalculations = 4;
+        private const int MinimumPlayerScoreForAdvantageCalculations = 4;
         private const int ScoreDifferenceForAdvantage = 1;
 
         public bool CanHandle(Scores scores)
         {
-            return (scores.Score1 >= MinimumPerplayerScoreForAdvantageCalculations || scores.Score2 >= MinimumPerplayerScoreForAdvantageCalculations)
+            return (scores.Score1 >= MinimumPlayerScoreForAdvantageCalculations || scores.Score2 >= MinimumPlayerScoreForAdvantageCalculations)
                     && IsAPlayerInAdvantage(scores);
         }
 
