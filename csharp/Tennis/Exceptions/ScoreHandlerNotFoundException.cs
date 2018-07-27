@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tennis
+namespace Tennis.Exceptions
 {
     public class ScoreHandlerNotFoundException : Exception
     {

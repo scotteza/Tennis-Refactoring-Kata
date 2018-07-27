@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\ScoreDescriptionNotFoundException.cs" />
     <Compile Include="ScoreHandlers\EqualScoreHandler.cs" />
     <Compile Include="Scores.cs" />
     <Compile Include="ScoreHandlers\IScoreHandler.cs" />
@@ -53,7 +54,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ITennisGame.cs" />
-    <Compile Include="ScoreHandlerNotFoundException.cs" />
+    <Compile Include="Exceptions\ScoreHandlerNotFoundException.cs" />
     <Compile Include="TennisGame1.cs" />
     <Compile Include="TennisGame2.cs" />
     <Compile Include="TennisGame3.cs" />

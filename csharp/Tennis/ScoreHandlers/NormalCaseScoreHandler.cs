@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
+using Tennis.Exceptions;
 
 namespace Tennis.ScoreHandlers
 {
@@ -12,38 +14,27 @@ namespace Tennis.ScoreHandlers
 
         public string GetScore(Scores scores)
         {
-            var score = new StringBuilder();
-            for (var i = 1; i < 3; i++)
-            {
-                var tempScore = 0;
-                if (i == 1)
-                {
-                    tempScore = scores.Score1;
-                }
-                else
-                {
-                    score.Append("-");
-                    tempScore = scores.Score2;
-                }
+            var score1Description = GetScoreDescription(scores.Score1);
+            var score2Description = GetScoreDescription(scores.Score2);
 
-                switch (tempScore)
-                {
-                    case 0:
-                        score.Append("Love");
-                        break;
-                    case 1:
-                        score.Append("Fifteen");
-                        break;
-                    case 2:
-                        score.Append("Thirty");
-                        break;
-                    case 3:
-                        score.Append("Forty");
-                        break;
-                }
+            return $"{score1Description}-{score2Description}";
+        }
+
+        private static string GetScoreDescription(int score)
+        {
+            switch (score)
+            {
+                case 0:
+                    return "Love";
+                case 1:
+                    return "Fifteen";
+                case 2:
+                    return "Thirty";
+                case 3:
+                    return "Forty";
             }
 
-            return score.ToString();
+            throw new ScoreDescriptionNotFoundException($"Score description not found for score {score}");
         }
     }
 }
