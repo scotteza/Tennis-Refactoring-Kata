@@ -1,4 +1,4 @@
-﻿namespace Tennis.ScoreHandlers
+﻿namespace Tennis
 {
     public class Scores
     {

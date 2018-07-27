@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ScoreHandlers\EqualScoreHandler.cs" />
-    <Compile Include="ScoreHandlers\Scores.cs" />
+    <Compile Include="Scores.cs" />
     <Compile Include="ScoreHandlers\IScoreHandler.cs" />
     <Compile Include="ScoreHandlers\InAdvantageAndWinRangeScoreHandler.cs" />
     <Compile Include="ScoreHandlers\NormalCaseScoreHandler.cs" />
