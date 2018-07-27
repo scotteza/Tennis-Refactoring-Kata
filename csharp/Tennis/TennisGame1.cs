@@ -26,14 +26,10 @@ namespace Tennis
         public string GetScore()
         {
             var gameState = GameState.GetGameState(player1, player2);
+
             if (gameState != null)
             {
                 return gameState.GetScore();
-            }
-
-            if (ScoresAreInAdvantageAndWinRange())
-            {
-                return GetAdvantageAndWinScores();
             }
 
             return GetScoreForNormalCases();
@@ -73,32 +69,6 @@ namespace Tennis
             }
 
             return score;
-        }
-
-        private string GetAdvantageAndWinScores()
-        {
-            var minusResult = player1.Score - player2.Score;
-            if (minusResult == 1)
-            {
-                return "Advantage player1";
-            }
-            else if (minusResult == -1)
-            {
-                return "Advantage player2";
-            }
-            else if (minusResult >= 2)
-            {
-                return "Win for player1";
-            }
-            else
-            {
-                return "Win for player2";
-            }
-        }
-
-        private bool ScoresAreInAdvantageAndWinRange()
-        {
-            return player1.Score >= 4 || player2.Score >= 4;
         }
     }
 }
