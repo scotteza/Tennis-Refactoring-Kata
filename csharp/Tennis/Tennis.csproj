@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Exceptions\ScoreDescriptionNotFoundException.cs" />
     <Compile Include="ScoreHandlers\EqualScoreHandler.cs" />
+    <Compile Include="ScoreHandlers\ScoreHandlerChain.cs" />
     <Compile Include="ScoreHelper.cs" />
     <Compile Include="Scores.cs" />
     <Compile Include="ScoreHandlers\IScoreHandler.cs" />

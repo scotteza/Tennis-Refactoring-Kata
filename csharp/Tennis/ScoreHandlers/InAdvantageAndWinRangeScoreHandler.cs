@@ -4,6 +4,7 @@ namespace Tennis.ScoreHandlers
 {
     internal class InAdvantageAndWinRangeScoreHandler : IScoreHandler
     {
+        // TODO: split this out into two handler classes
         private const int MinimumScoreForAdvantageOrWin = 4;
         private const int MinimumScoreDifferenceForWin = 2;
 
