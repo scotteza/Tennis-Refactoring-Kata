@@ -27,43 +27,49 @@ namespace Tennis
             {
                 return GetEqualScoresDescription();
             }
-            else if (ScoresAreInAdvantageAndWinRange())
+
+            if (ScoresAreInAdvantageAndWinRange())
             {
                 return GetAdvantageAndWinScores();
             }
-            else
+
+            return GetScoreForNormalCases();
+        }
+
+        private string GetScoreForNormalCases()
+        {
+            var score = "";
+            for (var i = 1; i < 3; i++)
             {
-                var score = "";
-                for (var i = 1; i < 3; i++)
+                var tempScore = 0;
+                if (i == 1)
                 {
-                    var tempScore = 0;
-                    if (i == 1)
-                    {
-                        tempScore = player1Score;
-                    }
-                    else
-                    {
-                        score += "-"; tempScore = player2Score;
-                    }
-                    switch (tempScore)
-                    {
-                        case 0:
-                            score += "Love";
-                            break;
-                        case 1:
-                            score += "Fifteen";
-                            break;
-                        case 2:
-                            score += "Thirty";
-                            break;
-                        case 3:
-                            score += "Forty";
-                            break;
-                    }
+                    tempScore = player1Score;
                 }
-                return score;
+                else
+                {
+                    score += "-";
+                    tempScore = player2Score;
+                }
+
+                switch (tempScore)
+                {
+                    case 0:
+                        score += "Love";
+                        break;
+                    case 1:
+                        score += "Fifteen";
+                        break;
+                    case 2:
+                        score += "Thirty";
+                        break;
+                    case 3:
+                        score += "Forty";
+                        break;
+                }
             }
 
+            return score;
         }
 
         private string GetAdvantageAndWinScores()
