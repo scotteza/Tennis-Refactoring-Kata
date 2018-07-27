@@ -23,24 +23,18 @@ namespace Tennis
 
         public string GetScore()
         {
-            string score = "";
-            var tempScore = 0;
             if (ScoresAreEqual())
             {
                 return GetEqualScoresDescription();
             }
-            // Advantage and win cases
-            else if (m_score1 >= 4 || m_score2 >= 4)
+            else if (ScoresAreInAdvantageAndWinRange())
             {
-                var minusResult = m_score1 - m_score2;
-                if (minusResult == 1) score = "Advantage player1";
-                else if (minusResult == -1) score = "Advantage player2";
-                else if (minusResult >= 2) score = "Win for player1";
-                else score = "Win for player2";
+                return GetAdvantageAndWinScores();
             }
             else
             {
-                // Other cases
+                var tempScore = 0;
+                var score = "";
                 for (var i = 1; i < 3; i++)
                 {
                     if (i == 1) tempScore = m_score1;
@@ -61,8 +55,35 @@ namespace Tennis
                             break;
                     }
                 }
+                return score;
             }
-            return score;
+
+        }
+
+        private string GetAdvantageAndWinScores()
+        {
+            var minusResult = m_score1 - m_score2;
+            if (minusResult == 1)
+            {
+                return "Advantage player1";
+            }
+            else if (minusResult == -1)
+            {
+                return "Advantage player2";
+            }
+            else if (minusResult >= 2)
+            {
+                return "Win for player1";
+            }
+            else
+            {
+                return "Win for player2";
+            }
+        }
+
+        private bool ScoresAreInAdvantageAndWinRange()
+        {
+            return m_score1 >= 4 || m_score2 >= 4;
         }
 
         private bool ScoresAreEqual()
