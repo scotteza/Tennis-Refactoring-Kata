@@ -34,7 +34,7 @@ namespace Tennis
 
         public string GetScore()
         {
-            var gameState = GameState.GetGameState(player1Score, player2Score);
+            var gameState = GameState.GetGameState(player1.Score, player2.Score);
             if (gameState != null)
             {
                 return gameState.GetScore();
