@@ -9,11 +9,11 @@
         {
             if (player1.Score == player2.Score)
             {
-                return new EqualScoreState(player1, player2);
+                return new EqualScoreGameState(player1, player2);
             }
             else if (player1.Score >= 4 || player2.Score >= 4)
             {
-                return new InAdvantageAndWinRangeState(player1, player2);
+                return new InAdvantageAndWinRangeGameState(player1, player2);
             }
 
             return null;
@@ -28,7 +28,7 @@
         public abstract string GetScore();
     }
 
-    internal class EqualScoreState : GameState
+    internal class EqualScoreGameState : GameState
     {
         public override string GetScore()
         {
@@ -45,14 +45,14 @@
             }
         }
 
-        public EqualScoreState(Player player1, Player player2) : base(player1, player2)
+        public EqualScoreGameState(Player player1, Player player2) : base(player1, player2)
         {
         }
     }
 
-    internal class InAdvantageAndWinRangeState : GameState
+    internal class InAdvantageAndWinRangeGameState : GameState
     {
-        public InAdvantageAndWinRangeState(Player player1, Player player2) : base(player1, player2)
+        public InAdvantageAndWinRangeGameState(Player player1, Player player2) : base(player1, player2)
         {
         }
 
