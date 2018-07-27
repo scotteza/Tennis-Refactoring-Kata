@@ -33,12 +33,18 @@ namespace Tennis
             }
             else
             {
-                var tempScore = 0;
                 var score = "";
                 for (var i = 1; i < 3; i++)
                 {
-                    if (i == 1) tempScore = m_score1;
-                    else { score += "-"; tempScore = m_score2; }
+                    var tempScore = 0;
+                    if (i == 1)
+                    {
+                        tempScore = m_score1;
+                    }
+                    else
+                    {
+                        score += "-"; tempScore = m_score2;
+                    }
                     switch (tempScore)
                     {
                         case 0:
