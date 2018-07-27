@@ -4,8 +4,8 @@ namespace Tennis
     {
         private string player1Name;
         private string player2Name;
-        private Player player1;
-        private Player player2;
+        private readonly Player player1;
+        private readonly Player player2;
 
         public TennisGame1(string player1Name, string player2Name)
         {
