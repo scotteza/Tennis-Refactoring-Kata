@@ -23,6 +23,12 @@ namespace Tennis
 
         public string GetScore()
         {
+            var gameState = GameState.GetGameState(player1Score, player2Score);
+            if (gameState != null)
+            {
+                return gameState.GetScore();
+            }
+
             if (ScoresAreEqual())
             {
                 return GetEqualScoresDescription();
