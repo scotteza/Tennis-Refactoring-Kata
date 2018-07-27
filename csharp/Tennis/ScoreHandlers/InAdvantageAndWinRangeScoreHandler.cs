@@ -2,14 +2,14 @@
 {
     internal class InAdvantageAndWinRangeScoreHandler : IScoreHandler
     {
-        public bool CanHandle(GameScores scores)
+        public bool CanHandle(Scores scores)
         {
             return scores.Score1 >= 4 || scores.Score2 >= 4;
         }
 
-        public string GetScore(Player player1, Player player2)
+        public string GetScore(Scores scores)
         {
-            var minusResult = player1.Score - player2.Score;
+            var minusResult = scores.Score1 - scores.Score2;
             if (minusResult == 1)
             {
                 return "Advantage player1";

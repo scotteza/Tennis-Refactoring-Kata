@@ -2,14 +2,14 @@
 {
     internal class EqualScoreHandler : IScoreHandler
     {
-        public bool CanHandle(GameScores scores)
+        public bool CanHandle(Scores scores)
         {
             return scores.Score1 == scores.Score2;
         }
 
-        public string GetScore(Player player1, Player player2)
+        public string GetScore(Scores scores)
         {
-            switch (player1.Score)
+            switch (scores.Score1)
             {
                 case 0:
                     return "Love-All";

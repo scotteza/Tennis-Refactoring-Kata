@@ -2,13 +2,13 @@
 {
     internal class NormalCaseScoreHandler : IScoreHandler
     {
-        public bool CanHandle(GameScores scores)
+        public bool CanHandle(Scores scores)
         {
             // TODO: re think this
             return true;
         }
 
-        public string GetScore(Player player1, Player player2)
+        public string GetScore(Scores scores)
         {
             var score = "";
             for (var i = 1; i < 3; i++)
@@ -16,12 +16,12 @@
                 var tempScore = 0;
                 if (i == 1)
                 {
-                    tempScore = player1.Score;
+                    tempScore = scores.Score1;
                 }
                 else
                 {
                     score += "-";
-                    tempScore = player2.Score;
+                    tempScore = scores.Score2;
                 }
 
                 switch (tempScore)
