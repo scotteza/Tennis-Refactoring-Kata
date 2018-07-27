@@ -1,36 +1,34 @@
-﻿using System;
-
-namespace Tennis
+﻿namespace Tennis
 {
-    public abstract class GameState
+    internal abstract class GameState
     {
-        protected readonly int player1Score;
-        private readonly int player2Score;
+        protected readonly Player player1;
+        private readonly Player player2;
 
-        public static GameState GetGameState(int player1Score, int player2Score)
+        public static GameState GetGameState(Player player1, Player player2)
         {
-            if (player1Score == player2Score)
+            if (player1.Score == player2.Score)
             {
-                return new EqualScoreState(player1Score, player2Score);
+                return new EqualScoreState(player1, player2);
             }
 
             return null;
         }
 
-        protected GameState(int player1Score, int player2Score)
+        protected GameState(Player player1, Player player2)
         {
-            this.player1Score = player1Score;
-            this.player2Score = player2Score;
+            this.player1 = player1;
+            this.player2 = player2;
         }
 
         public abstract string GetScore();
     }
 
-    class EqualScoreState : GameState
+    internal class EqualScoreState : GameState
     {
         public override string GetScore()
         {
-            switch (player1Score)
+            switch (player1.Score)
             {
                 case 0:
                     return "Love-All";
@@ -43,7 +41,7 @@ namespace Tennis
             }
         }
 
-        public EqualScoreState(int player1Score, int player2Score) : base(player1Score, player2Score)
+        public EqualScoreState(Player player1, Player player2) : base(player1, player2)
         {
         }
     }
