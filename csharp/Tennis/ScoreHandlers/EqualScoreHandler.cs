@@ -12,11 +12,9 @@
             switch (scores.Score1)
             {
                 case 0:
-                    return "Love-All";
                 case 1:
-                    return "Fifteen-All";
                 case 2:
-                    return "Thirty-All";
+                    return $"{ScoreHelper.GetScoreDescription(scores.Score1)}-All";
                 default:
                     return "Deuce";
             }
