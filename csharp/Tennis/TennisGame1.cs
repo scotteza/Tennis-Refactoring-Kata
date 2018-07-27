@@ -7,18 +7,18 @@ namespace Tennis
     {
         private readonly Player player1;
         private readonly Player player2;
-        private readonly List<IGameState> scoreHandlers;
+        private readonly List<IScoreHandler> scoreHandlers;
 
         public TennisGame1(string player1Name, string player2Name)
         {
             player1 = new Player(player1Name);
             player2 = new Player(player2Name);
 
-            scoreHandlers = new List<IGameState>()
+            scoreHandlers = new List<IScoreHandler>()
             {
-                new EqualScoreGameState(),
-                new InAdvantageAndWinRangeGameState(),
-                new NormalCaseGameState()
+                new EqualScoreHandler(),
+                new InAdvantageAndWinRangeScoreHandler(),
+                new NormalCaseScoreHandler()
             };
         }
 

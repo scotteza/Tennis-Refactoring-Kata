@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EqualScoreGameState.cs" />
-    <Compile Include="GameState.cs" />
-    <Compile Include="InAdvantageAndWinRangeGameState.cs" />
-    <Compile Include="NormalCaseGameState.cs" />
+    <Compile Include="EqualScoreHandler.cs" />
+    <Compile Include="IScoreHandler.cs" />
+    <Compile Include="InAdvantageAndWinRangeScoreHandler.cs" />
+    <Compile Include="NormalCaseScoreHandler.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ITennisGame.cs" />

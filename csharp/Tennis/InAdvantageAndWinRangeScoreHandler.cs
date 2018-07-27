@@ -1,6 +1,6 @@
 ﻿namespace Tennis
 {
-    internal class InAdvantageAndWinRangeGameState : IGameState
+    internal class InAdvantageAndWinRangeScoreHandler : IScoreHandler
     {
         public bool CanHandle(Player player1, Player player2)
         {

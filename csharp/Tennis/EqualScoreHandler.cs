@@ -1,6 +1,6 @@
 ﻿namespace Tennis
 {
-    internal class EqualScoreGameState : IGameState
+    internal class EqualScoreHandler : IScoreHandler
     {
         public bool CanHandle(Player player1, Player player2)
         {
