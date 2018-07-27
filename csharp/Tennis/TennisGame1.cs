@@ -29,11 +29,6 @@ namespace Tennis
                 return gameState.GetScore();
             }
 
-            if (ScoresAreEqual())
-            {
-                return GetEqualScoresDescription();
-            }
-
             if (ScoresAreInAdvantageAndWinRange())
             {
                 return GetAdvantageAndWinScores();
@@ -102,26 +97,6 @@ namespace Tennis
         private bool ScoresAreInAdvantageAndWinRange()
         {
             return player1Score >= 4 || player2Score >= 4;
-        }
-
-        private bool ScoresAreEqual()
-        {
-            return player1Score == player2Score;
-        }
-
-        private string GetEqualScoresDescription()
-        {
-            switch (player1Score)
-            {
-                case 0:
-                    return "Love-All";
-                case 1:
-                    return "Fifteen-All";
-                case 2:
-                    return "Thirty-All";
-                default:
-                    return "Deuce";
-            }
         }
     }
 }
