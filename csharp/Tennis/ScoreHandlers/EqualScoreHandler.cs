@@ -7,7 +7,7 @@
             return scores.Score1 == scores.Score2;
         }
 
-        public string GetScore(Scores scores)
+        public string GetScoreDescription(Scores scores)
         {
             switch (scores.Score1)
             {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Text;
-using Tennis.Exceptions;
-
-namespace Tennis.ScoreHandlers
+﻿namespace Tennis.ScoreHandlers
 {
     internal class NormalCaseScoreHandler : IScoreHandler
     {
@@ -12,7 +8,7 @@ namespace Tennis.ScoreHandlers
             return true;
         }
 
-        public string GetScore(Scores scores)
+        public string GetScoreDescription(Scores scores)
         {
             var score1Description = ScoreHelper.GetScoreDescription(scores.Score1);
             var score2Description = ScoreHelper.GetScoreDescription(scores.Score2);

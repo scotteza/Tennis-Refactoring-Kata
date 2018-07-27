@@ -45,7 +45,7 @@ namespace Tennis
             {
                 if (scoreHandler.CanHandle(scores))
                 {
-                    return scoreHandler.GetScore(scores);
+                    return scoreHandler.GetScoreDescription(scores);
                 }
             }
 

@@ -13,7 +13,7 @@ namespace Tennis.ScoreHandlers
                    || scores.Score2 >= MinimumScoreForAdvantageOrWin;
         }
 
-        public string GetScore(Scores scores)
+        public string GetScoreDescription(Scores scores)
         {
             var minusResult = GetAdvantageOrWin(scores);
 
