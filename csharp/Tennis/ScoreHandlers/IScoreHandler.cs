@@ -1,4 +1,4 @@
-﻿namespace Tennis
+﻿namespace Tennis.ScoreHandlers
 {
     internal interface IScoreHandler
     {
