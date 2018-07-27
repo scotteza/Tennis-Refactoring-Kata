@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Tennis.ScoreHandlers;
 
 namespace Tennis
@@ -7,15 +6,16 @@ namespace Tennis
     {
         private readonly Player player1;
         private readonly Player player2;
-        // TODO: move this somewhere else
-        private readonly List<IScoreHandler> scoreHandlers;
+
+        // TODO: move this somewhere else?
+        private readonly IScoreHandler[] scoreHandlers;
 
         public TennisGame1(string player1Name, string player2Name)
         {
             player1 = new Player(player1Name);
             player2 = new Player(player2Name);
 
-            scoreHandlers = new List<IScoreHandler>()
+            scoreHandlers = new IScoreHandler[]
             {
                 new EqualScoreHandler(),
                 new InAdvantageAndWinRangeScoreHandler(),
