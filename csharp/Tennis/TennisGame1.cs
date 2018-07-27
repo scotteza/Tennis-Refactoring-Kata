@@ -2,16 +2,11 @@ namespace Tennis
 {
     class TennisGame1 : ITennisGame
     {
-        private string player1Name;
-        private string player2Name;
         private readonly Player player1;
         private readonly Player player2;
 
         public TennisGame1(string player1Name, string player2Name)
         {
-            this.player1Name = player1Name;
-            this.player2Name = player2Name;
-
             player1 = new Player(player1Name);
             player2 = new Player(player2Name);
         }
