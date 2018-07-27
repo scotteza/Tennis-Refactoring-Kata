@@ -1,12 +1,14 @@
 ﻿namespace Tennis
 {
-    internal class NormalCaseGameState : GameState
+    internal class NormalCaseGameState : IGameState
     {
-        public NormalCaseGameState(Player player1, Player player2) : base(player1, player2)
+        public bool CanHandle(Player player1, Player player2)
         {
+            // TODO: re think this
+            return true;
         }
 
-        public override string GetScore()
+        public string GetScore(Player player1, Player player2)
         {
             var score = "";
             for (var i = 1; i < 3; i++)
@@ -14,12 +16,12 @@
                 var tempScore = 0;
                 if (i == 1)
                 {
-                    tempScore = Player1.Score;
+                    tempScore = player1.Score;
                 }
                 else
                 {
                     score += "-";
-                    tempScore = Player2.Score;
+                    tempScore = player2.Score;
                 }
 
                 switch (tempScore)

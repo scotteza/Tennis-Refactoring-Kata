@@ -1,14 +1,25 @@
+using System.Collections.Generic;
+using NUnit.Framework;
+
 namespace Tennis
 {
     internal class TennisGame1 : ITennisGame
     {
         private readonly Player player1;
         private readonly Player player2;
+        private readonly List<IGameState> scoreHandlers;
 
         public TennisGame1(string player1Name, string player2Name)
         {
             player1 = new Player(player1Name);
             player2 = new Player(player2Name);
+
+            scoreHandlers = new List<IGameState>()
+            {
+                new EqualScoreGameState(),
+                new InAdvantageAndWinRangeGameState(),
+                new NormalCaseGameState()
+            };
         }
 
         public void WonPoint(string playerName)
@@ -25,9 +36,16 @@ namespace Tennis
 
         public string GetScore()
         {
-            var gameState = GameState.GetGameState(player1, player2);
+            // TODO: move this somewhere else? Too many levels of indentation
+            foreach (var scoreHandler in scoreHandlers)
+            {
+                if (scoreHandler.CanHandle(player1, player2))
+                {
+                    return scoreHandler.GetScore(player1, player2);
+                }
+            }
 
-            return gameState.GetScore();
+            throw new ScoreHandlerNotFoundException("Could not find a score handler for situation");
         }
     }
 }

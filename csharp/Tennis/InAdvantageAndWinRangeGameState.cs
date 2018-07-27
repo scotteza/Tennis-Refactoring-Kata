@@ -1,14 +1,15 @@
 ﻿namespace Tennis
 {
-    internal class InAdvantageAndWinRangeGameState : GameState
+    internal class InAdvantageAndWinRangeGameState : IGameState
     {
-        public InAdvantageAndWinRangeGameState(Player player1, Player player2) : base(player1, player2)
+        public bool CanHandle(Player player1, Player player2)
         {
+            return player1.Score >= 4 || player2.Score >= 4;
         }
 
-        public override string GetScore()
+        public string GetScore(Player player1, Player player2)
         {
-            var minusResult = Player1.Score - Player2.Score;
+            var minusResult = player1.Score - player2.Score;
             if (minusResult == 1)
             {
                 return "Advantage player1";

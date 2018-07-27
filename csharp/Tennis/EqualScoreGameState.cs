@@ -1,14 +1,15 @@
 ﻿namespace Tennis
 {
-    internal class EqualScoreGameState : GameState
+    internal class EqualScoreGameState : IGameState
     {
-        public EqualScoreGameState(Player player1, Player player2) : base(player1, player2)
+        public bool CanHandle(Player player1, Player player2)
         {
+            return player1.Score == player2.Score;
         }
 
-        public override string GetScore()
+        public string GetScore(Player player1, Player player2)
         {
-            switch (Player1.Score)
+            switch (player1.Score)
             {
                 case 0:
                     return "Love-All";
