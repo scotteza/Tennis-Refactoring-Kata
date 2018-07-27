@@ -2,12 +2,12 @@
 {
     public class Player
     {
-        private string name;
+        public string Name { get; }
         public int Score { get; private set; }
 
         public Player(string name)
         {
-            this.name = name;
+            Name = name;
             Score = 0;
         }
 
