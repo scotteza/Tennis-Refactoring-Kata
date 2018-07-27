@@ -2,9 +2,9 @@
 {
     internal class EqualScoreHandler : IScoreHandler
     {
-        public bool CanHandle(Player player1, Player player2)
+        public bool CanHandle(GameScores scores)
         {
-            return player1.Score == player2.Score;
+            return scores.Score1 == scores.Score2;
         }
 
         public string GetScore(Player player1, Player player2)

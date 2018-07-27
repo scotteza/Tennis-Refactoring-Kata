@@ -2,7 +2,7 @@
 {
     internal class NormalCaseScoreHandler : IScoreHandler
     {
-        public bool CanHandle(Player player1, Player player2)
+        public bool CanHandle(GameScores scores)
         {
             // TODO: re think this
             return true;

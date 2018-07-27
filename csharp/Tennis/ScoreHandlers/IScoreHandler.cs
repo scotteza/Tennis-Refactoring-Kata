@@ -2,7 +2,7 @@
 {
     internal interface IScoreHandler
     {
-        bool CanHandle(Player player1, Player player2);
+        bool CanHandle(GameScores scores);
         string GetScore(Player player1, Player player2);
     }
 }

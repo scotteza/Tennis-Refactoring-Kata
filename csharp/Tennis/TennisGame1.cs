@@ -7,6 +7,7 @@ namespace Tennis
     {
         private readonly Player player1;
         private readonly Player player2;
+        // TODO: move this somewhere else
         private readonly List<IScoreHandler> scoreHandlers;
 
         public TennisGame1(string player1Name, string player2Name)
@@ -36,16 +37,23 @@ namespace Tennis
 
         public string GetScore()
         {
+            var gameScores = GetGameScores();
+
             // TODO: move this somewhere else? Too many levels of indentation
             foreach (var scoreHandler in scoreHandlers)
             {
-                if (scoreHandler.CanHandle(player1, player2))
+                if (scoreHandler.CanHandle(gameScores))
                 {
                     return scoreHandler.GetScore(player1, player2);
                 }
             }
 
             throw new ScoreHandlerNotFoundException("Could not find a score handler for situation");
+        }
+
+        private GameScores GetGameScores()
+        {
+            return new GameScores(player1.Score, player2.Score);
         }
     }
 }

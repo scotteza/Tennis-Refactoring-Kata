@@ -2,9 +2,9 @@
 {
     internal class InAdvantageAndWinRangeScoreHandler : IScoreHandler
     {
-        public bool CanHandle(Player player1, Player player2)
+        public bool CanHandle(GameScores scores)
         {
-            return player1.Score >= 4 || player2.Score >= 4;
+            return scores.Score1 >= 4 || scores.Score2 >= 4;
         }
 
         public string GetScore(Player player1, Player player2)
