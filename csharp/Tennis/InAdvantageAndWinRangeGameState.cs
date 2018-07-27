@@ -8,7 +8,7 @@
 
         public override string GetScore()
         {
-            var minusResult = player1.Score - player2.Score;
+            var minusResult = Player1.Score - Player2.Score;
             if (minusResult == 1)
             {
                 return "Advantage player1";

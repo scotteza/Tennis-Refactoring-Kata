@@ -8,7 +8,7 @@
 
         public override string GetScore()
         {
-            switch (player1.Score)
+            switch (Player1.Score)
             {
                 case 0:
                     return "Love-All";

@@ -2,8 +2,8 @@
 {
     internal abstract class GameState
     {
-        protected readonly Player player1;
-        protected readonly Player player2;
+        protected readonly Player Player1;
+        protected readonly Player Player2;
 
         public static GameState GetGameState(Player player1, Player player2)
         {
@@ -22,8 +22,8 @@
 
         protected GameState(Player player1, Player player2)
         {
-            this.player1 = player1;
-            this.player2 = player2;
+            this.Player1 = player1;
+            this.Player2 = player2;
         }
 
         public abstract string GetScore();

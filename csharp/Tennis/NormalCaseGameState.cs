@@ -14,12 +14,12 @@
                 var tempScore = 0;
                 if (i == 1)
                 {
-                    tempScore = player1.Score;
+                    tempScore = Player1.Score;
                 }
                 else
                 {
                     score += "-";
-                    tempScore = player2.Score;
+                    tempScore = Player2.Score;
                 }
 
                 switch (tempScore)
