@@ -2,6 +2,10 @@
 {
     internal class EqualScoreGameState : GameState
     {
+        public EqualScoreGameState(Player player1, Player player2) : base(player1, player2)
+        {
+        }
+
         public override string GetScore()
         {
             switch (player1.Score)
@@ -15,10 +19,6 @@
                 default:
                     return "Deuce";
             }
-        }
-
-        public EqualScoreGameState(Player player1, Player player2) : base(player1, player2)
-        {
         }
     }
 }
