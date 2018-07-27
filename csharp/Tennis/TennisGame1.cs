@@ -2,8 +2,6 @@ namespace Tennis
 {
     class TennisGame1 : ITennisGame
     {
-        private int player1Score = 0;
-        private int player2Score = 0;
         private string player1Name;
         private string player2Name;
         private Player player1;
@@ -23,12 +21,10 @@ namespace Tennis
             if (playerName == "player1")
             {
                 player1.WonPoint();
-                player1Score += 1;
             }
             else
             {
                 player2.WonPoint();
-                player2Score += 1;
             }
         }
 
@@ -56,12 +52,12 @@ namespace Tennis
                 var tempScore = 0;
                 if (i == 1)
                 {
-                    tempScore = player1Score;
+                    tempScore = player1.Score;
                 }
                 else
                 {
                     score += "-";
-                    tempScore = player2Score;
+                    tempScore = player2.Score;
                 }
 
                 switch (tempScore)
@@ -86,7 +82,7 @@ namespace Tennis
 
         private string GetAdvantageAndWinScores()
         {
-            var minusResult = player1Score - player2Score;
+            var minusResult = player1.Score - player2.Score;
             if (minusResult == 1)
             {
                 return "Advantage player1";
@@ -107,7 +103,7 @@ namespace Tennis
 
         private bool ScoresAreInAdvantageAndWinRange()
         {
-            return player1Score >= 4 || player2Score >= 4;
+            return player1.Score >= 4 || player2.Score >= 4;
         }
     }
 }
