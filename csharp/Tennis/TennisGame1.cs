@@ -25,25 +25,9 @@ namespace Tennis
         {
             string score = "";
             var tempScore = 0;
-            if (m_score1 == m_score2)
+            if (ScoresAreEqual())
             {
-                // Equal scores case
-                switch (m_score1)
-                {
-                    case 0:
-                        score = "Love-All";
-                        break;
-                    case 1:
-                        score = "Fifteen-All";
-                        break;
-                    case 2:
-                        score = "Thirty-All";
-                        break;
-                    default:
-                        score = "Deuce";
-                        break;
-
-                }
+                return GetEqualScoresDescription();
             }
             // Advantage and win cases
             else if (m_score1 >= 4 || m_score2 >= 4)
@@ -79,6 +63,26 @@ namespace Tennis
                 }
             }
             return score;
+        }
+
+        private bool ScoresAreEqual()
+        {
+            return m_score1 == m_score2;
+        }
+
+        private string GetEqualScoresDescription()
+        {
+            switch (m_score1)
+            {
+                case 0:
+                    return "Love-All";
+                case 1:
+                    return "Fifteen-All";
+                case 2:
+                    return "Thirty-All";
+                default:
+                    return "Deuce";
+            }
         }
     }
 }
