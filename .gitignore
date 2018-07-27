@@ -11,3 +11,5 @@ csharp/*.suo
 *.swp
 .DS_Store
 csharp/.vs
+csharp/.vs
+csharp/*DotSettings.user
