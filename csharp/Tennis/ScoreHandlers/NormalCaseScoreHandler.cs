@@ -1,4 +1,6 @@
-﻿namespace Tennis.ScoreHandlers
+﻿using System.Text;
+
+namespace Tennis.ScoreHandlers
 {
     internal class NormalCaseScoreHandler : IScoreHandler
     {
@@ -10,7 +12,7 @@
 
         public string GetScore(Scores scores)
         {
-            var score = "";
+            var score = new StringBuilder();
             for (var i = 1; i < 3; i++)
             {
                 var tempScore = 0;
@@ -20,28 +22,28 @@
                 }
                 else
                 {
-                    score += "-";
+                    score.Append("-");
                     tempScore = scores.Score2;
                 }
 
                 switch (tempScore)
                 {
                     case 0:
-                        score += "Love";
+                        score.Append("Love");
                         break;
                     case 1:
-                        score += "Fifteen";
+                        score.Append("Fifteen");
                         break;
                     case 2:
-                        score += "Thirty";
+                        score.Append("Thirty");
                         break;
                     case 3:
-                        score += "Forty";
+                        score.Append("Forty");
                         break;
                 }
             }
 
-            return score;
+            return score.ToString();
         }
     }
 }
