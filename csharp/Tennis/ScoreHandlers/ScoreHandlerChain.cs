@@ -11,7 +11,8 @@ namespace Tennis.ScoreHandlers
             scoreHandlers = new IScoreHandler[]
             {
                 new EqualScoreHandler(),
-                new InAdvantageAndWinRangeScoreHandler(),
+                new WinningScoreHandler(),
+                new AdvantageHandler(),
                 new NormalCaseScoreHandler()
             };
         }

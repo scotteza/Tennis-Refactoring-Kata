@@ -48,10 +48,11 @@
     <Compile Include="Exceptions\ScoreDescriptionNotFoundException.cs" />
     <Compile Include="ScoreHandlers\EqualScoreHandler.cs" />
     <Compile Include="ScoreHandlers\ScoreHandlerChain.cs" />
+    <Compile Include="ScoreHandlers\WinningScoreHandler.cs" />
     <Compile Include="ScoreHelper.cs" />
     <Compile Include="Scores.cs" />
     <Compile Include="ScoreHandlers\IScoreHandler.cs" />
-    <Compile Include="ScoreHandlers\InAdvantageAndWinRangeScoreHandler.cs" />
+    <Compile Include="ScoreHandlers\AdvantageHandler.cs" />
     <Compile Include="ScoreHandlers\NormalCaseScoreHandler.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
